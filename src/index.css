@@ -1,3 +1,7 @@
-:root {
-  font-family: system-ui;
+
+
+body {
+  margin: 0px;
+  background-color: rgba(24, 24, 27, 0.9);
+
 }
