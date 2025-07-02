@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  max-width: 2000px;
+  height: 50vh;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 80px;
+  position: relative;
+}
+
+.movieImage {
+  width: 2500px;
+  object-fit: cover;
+  object-position: center 33%;
+  border-radius: 0 8px 8px 0;
+}
+
+.movieDetails {
+  top: 25%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  color: white;
+  font-family: "Arial";
+  gap: 20px;
+}
+
+.mostLiked {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.movieName {
+  font-size: 20px;
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+.movieRating {
+  margin-left: 10px;
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+}
+.dot {
+  color: rgba(82, 82, 91, 1);
+  font-size: 22px;
+  display: inline-block;
+}
+
+.movieCategory,
+.movieCreator {
+  margin-left: 8px;
+}
+
+.movieLikes {
+  margin-left: 8px;
+  position: relative;
+}
+
+.numOfLikes {
+  position: absolute;
+  margin-left: 4px;
+  padding-top: 3px;
+}

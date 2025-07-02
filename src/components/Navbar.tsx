@@ -1,7 +1,7 @@
 import styles from "./Navbar.module.css";
 import { FaSearch } from "react-icons/fa";
 import { FaUserFriends } from "react-icons/fa";
-import defaultProfile from "../assets/temp.jpg";
+import defaultProfile from "../assets/tempProfilePhoto.jpg";
 
 export const Navbar = () => {
   const userProfileImage = defaultProfile; // later will be replaced with a dynamic image
@@ -19,10 +19,10 @@ export const Navbar = () => {
         <button>Favorite (25)</button>
       </div>
       <div className={styles["navbar-rightSection"]}>
-        <button className={styles.profileBtn}>
+        <button className={styles.searchBtn}>
           <FaSearch color="white" size={29} />
         </button>
-        <button className={styles.profileBtn}>
+        <button className={styles.actorsBtn}>
           <FaUserFriends color="white" size={29} />
         </button>
         <button className={styles.profileBtn}>
