@@ -2,25 +2,14 @@ import React from "react";
 import topMovie from "../../assets/spiderman.jpg";
 import styles from "./TopMovie.module.css";
 import { AiOutlineHeart } from "react-icons/ai";
-import { useQuery } from "@tanstack/react-query";
 import type { Movie } from "../../types/Movie";
-import { getMostLikedMovie } from "../../api/fakeMovies";
 
-export const TopMovie = () => {
-  const {
-    data: movie,
-    isLoading,
-    error,
-  } = useQuery<Movie>({
-    queryKey: ["mostLikedMovie"],
-    queryFn: getMostLikedMovie,
-  });
+type Props = {
+  movie: Movie;
+};
 
-  return isLoading ? (
-    <div>טוען...</div>
-  ) : error ? (
-    <div>{error.message}</div>
-  ) : (
+export const TopMovie = ({ movie }: Props) => {
+  return (
     <div className={styles.container}>
       <div className={styles.movieDetails}>
         <span className={styles.mostLiked}>Most liked movie</span>
@@ -40,7 +29,9 @@ export const TopMovie = () => {
               </span>
             ))}
           </span>
-          <p className={styles.movieCreator}>{movie?.year} By {movie?.director}</p>
+          <p className={styles.movieCreator}>
+            {movie?.year} By {movie?.director}
+          </p>
           <div className={styles.movieLikes}>
             <AiOutlineHeart size="22" color="red" />
             <span className={styles.numOfLikes}>{movie?.likes}</span>

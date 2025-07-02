@@ -7,11 +7,10 @@ import { getNavbarData } from "../api/fakeNavBarData";
 import type { navbarData } from "../types/NavbarData";
 
 export const Navbar = () => {
-  const {
-    data: data,
-    isLoading,
-    error,
-  } = useQuery({ queryKey: ["navBarData"], queryFn: getNavbarData });
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["navBarData"],
+    queryFn: getNavbarData,
+  });
   const userProfileImage = defaultProfile; // later will be replaced with a dynamic image
 
   return isLoading ? (
