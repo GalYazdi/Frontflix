@@ -4,6 +4,7 @@ import { TopMovie } from "./TopMovie";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import type { Movie } from "../../types/Movie";
 import { getMostLikedMovie } from "../../api/fakeMovies";
+import { MovieCard } from "../../components/MovieCard";
 
 export const Home = () => {
   const queryClient = useQueryClient();
@@ -36,6 +37,7 @@ export const Home = () => {
       <div style={{ height: "1px" }} />
 
       <TopMovie movie={topLikedMovie} />
+      <MovieCard />
     </>
   );
 };

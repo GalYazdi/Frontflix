@@ -2,7 +2,7 @@ import React from "react";
 import topMovie from "../../assets/spiderman.jpg";
 import styles from "./TopMovie.module.css";
 import { AiOutlineHeart } from "react-icons/ai";
-import type { Movie } from "../../types/Movie";
+import type { Movie } from "debflix-types";
 
 type Props = {
   movie: Movie;
@@ -14,7 +14,7 @@ export const TopMovie = ({ movie }: Props) => {
       <div className={styles.movieDetails}>
         <span className={styles.mostLiked}>Most liked movie</span>
         <div style={{ position: "relative" }}>
-          <span className={styles.movieName}>{movie?.name}</span>
+          <span className={styles.movieName}>{movie?.title}</span>
           <span className={styles.movieRating}>{movie?.rating}</span>
         </div>
         <div>
