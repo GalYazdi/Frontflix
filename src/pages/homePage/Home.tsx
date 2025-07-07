@@ -2,9 +2,9 @@ import React from "react";
 import { Navbar } from "../../components/Navbar";
 import { TopMovie } from "./TopMovie";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import type { Movie } from "../../types/Movie";
+import type { Movie } from "debflix-types";
 import { getMostLikedMovie } from "../../api/fakeMovies";
-import { MovieCard } from "../../components/MovieCard";
+import { MoviesList } from "./MoviesList";
 
 export const Home = () => {
   const queryClient = useQueryClient();
@@ -18,6 +18,8 @@ export const Home = () => {
     queryFn: getMostLikedMovie,
   });
   console.log("cache", queryClient.getQueryCache()); // log cache
+  console.log("movies",movies)
+  
 
   if (!movies) {
     return <div>{error?.message}</div>;
@@ -36,8 +38,8 @@ export const Home = () => {
       <Navbar />
       <div style={{ height: "1px" }} />
 
-      <TopMovie movie={topLikedMovie} />
-      <MovieCard />
+      <TopMovie movie={topLikedMovie}/>
+      <MoviesList movies={movies} />
     </>
   );
 };
