@@ -5,9 +5,12 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import type { Movie } from "debflix-types";
 import { fetchMovies } from "../../api/fakeMovies";
 import { MoviesList } from "./MoviesList";
+import { useState, useEffect } from "react";
 
 export const Home = () => {
   const queryClient = useQueryClient();
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchResults, setSearchResults] = useState<Movie[]>([]);
 
   const {
     data: movies,
@@ -18,8 +21,20 @@ export const Home = () => {
     queryFn: fetchMovies,
   });
   console.log("cache", queryClient.getQueryCache()); // log cache
-  console.log("movies",movies)
-  
+
+  useEffect(() => {
+    if (searchQuery.trim() === "") {
+      setSearchResults(movies ?? []);
+      return;
+    }
+
+    const filteredMovies =
+      movies?.filter((movie) =>
+        movie.title.toLowerCase().includes(searchQuery.toLowerCase())
+      ) ?? [];
+
+    setSearchResults(filteredMovies);
+  }, [searchQuery, movies]);
 
   if (!movies) {
     return <div>{error?.message}</div>;
@@ -35,11 +50,11 @@ export const Home = () => {
     <div>{error.message}</div>
   ) : (
     <>
-      <Navbar />
+      <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <div style={{ height: "1px" }} />
 
-      <TopMovie movie={topLikedMovie}/>
-      <MoviesList movies={movies} />
+      <TopMovie movie={topLikedMovie} />
+      <MoviesList movies={searchResults} />
     </>
   );
 };

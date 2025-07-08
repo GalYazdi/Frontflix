@@ -3,15 +3,22 @@ import { FaSearch } from "react-icons/fa";
 import { FaUserFriends } from "react-icons/fa";
 import defaultProfile from "../assets/tempProfilePhoto.jpg";
 import { useQuery } from "@tanstack/react-query";
-import { getNavbarData } from "../api/fakeNavBarData";
+import { getNavbarData } from "../api/fakeNavbarData";
 import type { navbarData } from "../types/NavbarData";
 
-export const Navbar = () => {
+type Props = {
+  searchQuery: string,
+  setSearchQuery: (val: string) => void
+}
+
+export const Navbar = ({searchQuery, setSearchQuery}: Props) => {
   const { data, isLoading, error } = useQuery({
     queryKey: ["navBarData"],
     queryFn: getNavbarData,
   });
+
   const userProfileImage = defaultProfile; // later will be replaced with a dynamic image
+
 
   return isLoading ? (
     <div>טוען...</div>
@@ -30,6 +37,15 @@ export const Navbar = () => {
         ))}
       </div>
       <div className={styles["navbar-rightSection"]}>
+        <input
+          placeholder="Search a movie..."
+          type="text"
+          value={searchQuery}
+          onChange={(e) => {
+            setSearchQuery(e.target.value);
+          }}
+        />
+
         <button className={styles.searchBtn}>
           <FaSearch color="white" size={29} />
         </button>
