@@ -1,4 +1,3 @@
-import React from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 import type { Movie } from "debflix-types";
 import styles from "./MovieInfo.module.css";
@@ -11,7 +10,9 @@ type Props = {
 export const MovieInfo = ({ movie, variant }: Props) => {
   return (
     <>
-      <div style={{ position: "relative" }}>
+      <div className={styles.container}
+
+      >
         <span
           className={
             variant === "top" ? styles.topMovieName : styles.cardMovieName

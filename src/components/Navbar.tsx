@@ -5,6 +5,7 @@ import defaultProfile from "../assets/tempProfilePhoto.jpg";
 import { useQuery } from "@tanstack/react-query";
 import { getNavbarData } from "../api/fakeNavbarData";
 import type { navbarData } from "../types/NavbarData";
+import { useState } from "react";
 
 type Props = {
   searchQuery: string;
@@ -16,6 +17,7 @@ export const Navbar = ({ searchQuery, setSearchQuery }: Props) => {
     queryKey: ["navBarData"],
     queryFn: getNavbarData,
   });
+  const [displaySearchField, setDisplaySearchField] = useState(false);
 
   const userProfileImage = defaultProfile; // later will be replaced with a dynamic image
 
@@ -37,19 +39,34 @@ export const Navbar = ({ searchQuery, setSearchQuery }: Props) => {
       </div>
       <div className={styles["navbar-rightSection"]}>
         <div className={styles.searchContainer}>
-          <input
-            className={styles.searchField}
-            placeholder="Search a movie..."
-            type="text"
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-            }}
-          />
-          <button className={styles.searchBtn}>
-            <FaSearch color="white" size={29} />
-          </button>
+          {displaySearchField ? (
+            <div className={styles.searchWrapper}>
+              <input
+                className={styles.searchField}
+                placeholder="Search a movie..."
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+              <button
+                className={styles.searchBtnInside}
+                onClick={() => setDisplaySearchField(false)}
+                type="button"
+              >
+                <FaSearch color="black" size={18} />
+              </button>
+            </div>
+          ) : (
+            <button
+              className={styles.searchBtn}
+              onClick={() => setDisplaySearchField(true)}
+              type="button"
+            >
+              <FaSearch color="white" size={24} />
+            </button>
+          )}
         </div>
+
         <button className={styles.actorsBtn}>
           <FaUserFriends color="white" size={29} />
         </button>

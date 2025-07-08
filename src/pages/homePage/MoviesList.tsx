@@ -21,7 +21,7 @@ export const MoviesList = ({ movies }: Props) => {
           <div key={category.id}>
             <p className={styles.category}>{category.name}</p>
             <div className={styles.gridContainer}>
-              {filteredMovies.slice(0,5).map((movie) => (
+              {filteredMovies.map((movie) => (
                 <div key={movie.id}>
                   <MovieCard movie={movie} />
                 </div>
