@@ -1,6 +1,12 @@
 .gridContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 12px; 
-  align-items: center; 
+  grid-template-columns: repeat(5, 1fr);
+  width: 99%
+}
+
+.category {
+  margin-left: 20px;
+  color: white;
+  font-family: "Arial";
+  font-weight: 500;
 }

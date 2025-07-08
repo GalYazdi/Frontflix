@@ -11,7 +11,6 @@ type Props = {
 export const MovieCard = ({ movie }: Props) => {
   return (
     <>
-      <p className={styles.category}>Category </p>
       <div className={styles.card}>
         <img
           src={movieImg}

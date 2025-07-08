@@ -3,7 +3,7 @@ import { Navbar } from "../../components/Navbar";
 import { TopMovie } from "./TopMovie";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import type { Movie } from "debflix-types";
-import { getMostLikedMovie } from "../../api/fakeMovies";
+import { fetchMovies } from "../../api/fakeMovies";
 import { MoviesList } from "./MoviesList";
 
 export const Home = () => {
@@ -15,7 +15,7 @@ export const Home = () => {
     error,
   } = useQuery<Movie[]>({
     queryKey: ["movies"],
-    queryFn: getMostLikedMovie,
+    queryFn: fetchMovies,
   });
   console.log("cache", queryClient.getQueryCache()); // log cache
   console.log("movies",movies)

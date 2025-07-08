@@ -16,7 +16,7 @@
 }
 
 .movieDetails {
-  top: 25%;
+  top: 15%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -30,38 +30,3 @@
   font-size: 36px;
   font-weight: 700;
 }
-
-/*  
-.movieName {
-  font-size: 20px;
-  margin-left: 8px;
-  font-weight: 600;
-}
-
-.movieRating {
-  margin-left: 10px;
-  font-size: 14px;
-  position: absolute;
-  bottom: 0;
-}
-.dot {
-  color: rgba(82, 82, 91, 1);
-  font-size: 22px;
-  display: inline-block;
-}
-
-.movieCategory,
-.movieCreator {
-  margin-left: 8px;
-}
-
-.movieLikes {
-  margin-left: 8px;
-  position: relative;
-}
-
-.numOfLikes {
-  position: absolute;
-  margin-left: 4px;
-  padding-top: 3px;
-} */

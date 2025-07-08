@@ -1,10 +1,3 @@
-.category {
-  margin-left: 20px;
-  color: white;
-  font-family: "Arial";
-  font-weight: 500;
-}
-
 .card {
   display: flex;
   flex-direction: column;
@@ -17,46 +10,10 @@
 }
 
 .movieImage {
-  width: 210px;
+  width: 100%;
   height: 120px;
   border-radius: 8px 8px 0 0;
 
   object-fit: cover;
   object-position: center 33%;
 }
-
-/* .movieName {
-  font-size: 15px;
-  margin-left: 8px;
-  font-weight: 500;
-}
-
-.movieRating {
-  margin-left: 10px;
-  font-size: 11px;
-  position: absolute;
-  bottom: 0;
-}
-
-.movieCategory {
-  margin-left: 8px;
-  font-size: 14px;
-}
-
-.dot {
-  color: rgba(82, 82, 91, 1);
-  font-size: 22px;
-  display: inline-block;
-}
-
-.movieLikes {
-  position: relative;
-  margin-left: 8px;
-
-}
-
-.numOfLikes {
-  position: absolute;
-  margin-left: 4px;
-  padding-top: 3px;
-} */
