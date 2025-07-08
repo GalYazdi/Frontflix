@@ -1,4 +1,3 @@
-import React from "react";
 import topMovie from "../../assets/spiderman.jpg";
 import styles from "./TopMovie.module.css";
 import type { Movie } from "debflix-types";

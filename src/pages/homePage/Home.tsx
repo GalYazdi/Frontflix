@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import { Navbar } from "../../components/Navbar";
 import { TopMovie } from "./TopMovie";
 import { useQuery } from "@tanstack/react-query";

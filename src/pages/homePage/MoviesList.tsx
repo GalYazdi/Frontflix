@@ -1,5 +1,4 @@
 import type { Movie } from "debflix-types";
-import React from "react";
 import { MovieCard } from "../../components/MovieCard";
 import styles from "./MoviesList.module.css";
 import categories from "../../api/mocks/categories.json";
