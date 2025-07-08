@@ -62,6 +62,23 @@
   cursor: pointer;
 }
 
+.searchContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchField {
+  height: 23px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+}
+
+.searchField:focus {
+  outline: none;
+
+}
+
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;

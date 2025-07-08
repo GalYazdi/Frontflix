@@ -1,16 +1,13 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import { Navbar } from "../../components/Navbar";
 import { TopMovie } from "./TopMovie";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import type { Movie } from "debflix-types";
 import { fetchMovies } from "../../api/fakeMovies";
 import { MoviesList } from "./MoviesList";
-import { useState, useEffect } from "react";
 
 export const Home = () => {
-  const queryClient = useQueryClient();
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [searchResults, setSearchResults] = useState<Movie[]>([]);
 
   const {
     data: movies,
@@ -20,29 +17,28 @@ export const Home = () => {
     queryKey: ["movies"],
     queryFn: fetchMovies,
   });
-  console.log("cache", queryClient.getQueryCache()); // log cache
 
-  useEffect(() => {
+  const filteredMovies: Movie[] = useMemo(() => {
     if (searchQuery.trim() === "") {
-      setSearchResults(movies ?? []);
-      return;
+      return movies ?? [];
     }
 
-    const filteredMovies =
+    return (
       movies?.filter((movie) =>
         movie.title.toLowerCase().includes(searchQuery.toLowerCase())
-      ) ?? [];
-
-    setSearchResults(filteredMovies);
+      ) ?? []
+    );
   }, [searchQuery, movies]);
+
+  const topLikedMovie: Movie | undefined = useMemo(() => {
+    return movies?.reduce((max, movie) =>
+      movie.likes > max.likes ? movie : max
+    );
+  }, [movies]);
 
   if (!movies) {
     return <div>{error?.message}</div>;
   }
-
-  const topLikedMovie = movies?.reduce((max, movie) =>
-    movie.likes > max.likes ? movie : max
-  );
 
   return isLoading ? (
     <div>טוען...</div>
@@ -53,8 +49,8 @@ export const Home = () => {
       <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <div style={{ height: "1px" }} />
 
-      <TopMovie movie={topLikedMovie} />
-      <MoviesList movies={searchResults} />
+      {topLikedMovie && <TopMovie movie={topLikedMovie} />}
+      <MoviesList movies={filteredMovies} />
     </>
   );
 };

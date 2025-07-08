@@ -7,18 +7,17 @@ import { getNavbarData } from "../api/fakeNavbarData";
 import type { navbarData } from "../types/NavbarData";
 
 type Props = {
-  searchQuery: string,
-  setSearchQuery: (val: string) => void
-}
+  searchQuery: string;
+  setSearchQuery: (val: string) => void;
+};
 
-export const Navbar = ({searchQuery, setSearchQuery}: Props) => {
+export const Navbar = ({ searchQuery, setSearchQuery }: Props) => {
   const { data, isLoading, error } = useQuery({
     queryKey: ["navBarData"],
     queryFn: getNavbarData,
   });
 
   const userProfileImage = defaultProfile; // later will be replaced with a dynamic image
-
 
   return isLoading ? (
     <div>טוען...</div>
@@ -27,7 +26,7 @@ export const Navbar = ({searchQuery, setSearchQuery}: Props) => {
   ) : (
     <div className={styles.navbar}>
       <div className={styles.logo}>
-        <text>DEBFLIX</text>
+        <span>DEBFLIX</span>
       </div>
       <div className={styles["navbar-categories"]}>
         {categories.map((category) => (
@@ -37,18 +36,20 @@ export const Navbar = ({searchQuery, setSearchQuery}: Props) => {
         ))}
       </div>
       <div className={styles["navbar-rightSection"]}>
-        <input
-          placeholder="Search a movie..."
-          type="text"
-          value={searchQuery}
-          onChange={(e) => {
-            setSearchQuery(e.target.value);
-          }}
-        />
-
-        <button className={styles.searchBtn}>
-          <FaSearch color="white" size={29} />
-        </button>
+        <div className={styles.searchContainer}>
+          <input
+            className={styles.searchField}
+            placeholder="Search a movie..."
+            type="text"
+            value={searchQuery}
+            onChange={(e) => {
+              setSearchQuery(e.target.value);
+            }}
+          />
+          <button className={styles.searchBtn}>
+            <FaSearch color="white" size={29} />
+          </button>
+        </div>
         <button className={styles.actorsBtn}>
           <FaUserFriends color="white" size={29} />
         </button>
