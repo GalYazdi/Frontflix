@@ -22,7 +22,7 @@
 }
 
 .category {
-  margin: 20px 0 25px 20px;
+  margin-left: clamp(120px, 32vw, 180px);
   color: white;
   font-family: "Arial";
   font-weight: 700;

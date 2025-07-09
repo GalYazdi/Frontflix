@@ -26,7 +26,6 @@
 
 @media (max-width: 640px) {
   .card {
-    margin: 10px 10px 0px 180px;
-    min-width: 320px;
+    margin-left: clamp(120px, 32vw, 180px);
   }
 }
