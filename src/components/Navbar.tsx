@@ -14,7 +14,7 @@ type Props = {
 };
 
 export const Navbar = ({ searchQuery, setSearchQuery }: Props) => {
-  const { data, isLoading, error } = useQuery({
+  const { data: navData, isLoading, error } = useQuery({
     queryKey: ["navBarData"],
     queryFn: getNavbarData,
   });
@@ -34,7 +34,7 @@ export const Navbar = ({ searchQuery, setSearchQuery }: Props) => {
       <div className={styles["navbar-categories"]}>
         {categories.map((category) => (
           <Link to="/" key={category.key} className={styles.navLink}>
-            {category.label} ({data?.[category.key]})
+            {category.label} ({navData?.[category.key]})
           </Link>
         ))}
       </div>

@@ -3,6 +3,7 @@ import styles from "./MovieCard.module.css";
 
 import type { Movie } from "debflix-types";
 import { MovieInfo } from "./MovieInfo";
+import { Link } from "react-router-dom";
 
 type Props = {
   movie: Movie;
@@ -23,14 +24,14 @@ export const MovieCard = ({ movie }: Props) => {
   return (
     <>
       <div className={styles.card}>
-        <button className={styles.cardButton} onClick={handleClick}>
+        <Link to={`/movie/${movie.id}`} className={styles.cardButton} onClick={handleClick}>
           <img
             src={movieImg}
             alt="Most liked movie"
             className={styles.movieImage}
           />
           <MovieInfo movie={movie} variant="card" />
-        </button>
+        </Link>
       </div>
     </>
   );

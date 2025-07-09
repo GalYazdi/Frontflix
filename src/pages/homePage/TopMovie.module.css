@@ -9,14 +9,14 @@
 }
 
 .movieImage {
-  width: 2500px;
+  width: 100vw;
   object-fit: cover;
   object-position: center 33%;
   border-radius: 0 8px 8px 0;
 }
 
 .movieDetails {
-  top: 15%;
+  top: 35%;
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -27,6 +27,15 @@
 }
 
 .mostLiked {
-  font-size: 36px;
+  font-size: clamp(20px, 4vw, 36px);
   font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .container {
+    margin: 10px 10px 0px 180px;
+  }
+  .movieDetails {
+    top: 50%;
+  }
 }

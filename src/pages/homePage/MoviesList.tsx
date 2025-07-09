@@ -19,7 +19,9 @@ export const MoviesList = ({ movies }: Props) => {
         if (filteredMovies.length === 0) return null;
         return (
           <div key={category.id}>
-            <p className={styles.category}>{category.name}</p>
+            <p className={styles.category}>
+              {category.name} ({filteredMovies.length})
+            </p>
             <div className={styles.gridContainer}>
               {filteredMovies.map((movie) => (
                 <div key={movie.id}>
