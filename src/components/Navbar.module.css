@@ -10,35 +10,37 @@
 }
 
 .logo {
-  width: 200px;
+  width: auto;
   font-family: "Arial", sans-serif;
   color: rgba(239, 68, 68, 1);
   font-weight: 800;
   padding-left: 20px;
-  font-size: 40px;
+  font-size: clamp(15px, 2.5vw, 40px);
 }
 
 .navbar-categories {
   flex: 1;
 }
 
-.navbar-categories button {
+.navLink {
   background-color: transparent;
+  font-family: "Arial";
   border: none;
   cursor: pointer;
   color: rgb(217, 217, 217);
-  margin-left: 5px;
-  font-size: 18px;
+  margin-left: clamp(11px, 1vw, 20px);
+  font-size: clamp(9px, 1.1vw, 18px);
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 
-.navbar-categories button:hover {
+.navLink:hover {
   font-weight: bold;
   text-shadow: 2px 2px 8px rgb(255, 255, 255);
 }
 
 .navbar-rightSection {
-  width: 325px;
+  width: auto;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -47,15 +49,20 @@
 }
 
 .profileBtn,
-.actorsBtn {
+.actorsBtn,
+.searchBtn {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
+.actorsIcon {
+  font-size: clamp(18px, 3vw, 29px);
+}
+
 .profileImage {
-  width: 36px;
-  height: 36px;
+  width: clamp(18px, 3vw, 36px);
+  height: clamp(18px, 3vw, 36px);
   border-radius: 4px;
   object-fit: cover;
   cursor: pointer;
@@ -67,10 +74,8 @@
   justify-content: center;
 }
 
-.searchBtn {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+.searchIcon {
+  font-size: clamp(18px, 2vw, 29px);
 }
 
 .searchWrapper {
@@ -79,19 +84,20 @@
   align-items: center;
 }
 
-
 .searchBtnInside {
   background-color: transparent;
   border: none;
   cursor: pointer;
   position: absolute;
-  right: 2px;
+  right: 0px;
+  font-size: 15px;
 }
 
 .searchField {
-  height: 1.4vw;
+  width: clamp(10px, 10vw, 200px);
   border: 2px solid transparent;
   border-radius: 10px;
+  font-size: clamp(8px, 0.8vw, 18px);
 }
 
 .searchField:focus {
@@ -103,7 +109,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    width: 200px;
+    width: 30vw;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -113,7 +119,7 @@
   }
 
   .logo {
-    font-size: 32px;
+    font-size: clamp(10px, 4.5vw, 35px);
     padding-left: 20px;
   }
 
@@ -121,27 +127,37 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 20px;
-    margin-top: 20px;
-    gap: 10px;
+    padding-left: 10px;
+    margin-top: 40px;
+    gap: 40px;
   }
 
-  .navbar-categories button {
-    margin: 10px 0;
-    font-size: 18px;
+  .navLink {
+    font-size: clamp(14px, 2.5vw, 20px);
   }
 
   .navbar-rightSection {
     flex-direction: row-reverse;
-    align-items: flex-start;
-    width: 75%;
-    justify-content: center;
+    gap: 50px;
     margin-bottom: 20px;
     padding-left: 20px;
   }
 
+  .actorsIcon {
+    font-size: clamp(18px, 5vw, 29px);
+  }
+
+  .profileImage {
+    width: clamp(18px, 5vw, 36px);
+    height: clamp(18px, 5vw, 36px);
+    border-radius: 4px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+
   .searchBtn,
-  .searchField {
+  .searchField,
+  .searchBtnInside {
     display: none;
   }
 }

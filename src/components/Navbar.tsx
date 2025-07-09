@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getNavbarData } from "../api/fakeNavbarData";
 import type { navbarData } from "../types/NavbarData";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 type Props = {
   searchQuery: string;
@@ -32,9 +33,9 @@ export const Navbar = ({ searchQuery, setSearchQuery }: Props) => {
       </div>
       <div className={styles["navbar-categories"]}>
         {categories.map((category) => (
-          <button key={category.key}>
+          <Link to="/" key={category.key} className={styles.navLink}>
             {category.label} ({data?.[category.key]})
-          </button>
+          </Link>
         ))}
       </div>
       <div className={styles["navbar-rightSection"]}>
@@ -53,7 +54,7 @@ export const Navbar = ({ searchQuery, setSearchQuery }: Props) => {
                 onClick={() => setDisplaySearchField(false)}
                 type="button"
               >
-                <FaSearch color="black" size={18} />
+                <FaSearch color="black" />
               </button>
             </div>
           ) : (
@@ -62,13 +63,17 @@ export const Navbar = ({ searchQuery, setSearchQuery }: Props) => {
               onClick={() => setDisplaySearchField(true)}
               type="button"
             >
-              <FaSearch color="white" size={24} />
+              <span className={styles.searchIcon}>
+              <FaSearch color="white"  />
+              </span>
             </button>
           )}
         </div>
 
         <button className={styles.actorsBtn}>
-          <FaUserFriends color="white" size={29} />
+          <span className={styles.actorsIcon}>
+            <FaUserFriends color="white" />
+          </span>
         </button>
         <button className={styles.profileBtn}>
           <img
