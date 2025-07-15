@@ -1,38 +1,47 @@
+import { Link } from "react-router-dom";
+import type { Movie } from "debflix-types";
+import axios from "axios";
+
 import movieImg from "../assets/spiderman.jpg";
 import styles from "./MovieCard.module.css";
-
-import type { Movie } from "debflix-types";
 import { MovieInfo } from "./MovieInfo";
-import { Link } from "react-router-dom";
+import { API_BASE_URL } from "../utils/config";
+import { useQuery } from "@tanstack/react-query";
+import { QueryKeys } from "../utils/queryKeys";
 
 type Props = {
   movie: Movie;
 };
 
 export const MovieCard = ({ movie }: Props) => {
-  const handleClick = async () => {
-    try {
-      const response = await fetch(
-        `https://jsonplaceholder.typicode.com/posts/${movie.id}`
-      );
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.log("Failed to fetch data: ", error);
-    }
+  const fetchMovie = async () => {
+    const response = await axios.get(`${API_BASE_URL}/posts/${movie.id}`);
+    return response.data;
   };
+
+  const { error, refetch } = useQuery({
+    queryKey: [QueryKeys.movieById, movie.id],
+    queryFn: fetchMovie,
+  });
+  const handleClick = async () => {
+    const result = await refetch();
+    console.log(result.data);
+  };
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+
   return (
-    <>
-      <div className={styles.card}>
-        <Link to={`/movie/${movie.id}`} className={styles.cardButton} onClick={handleClick}>
-          <img
-            src={movieImg}
-            alt="Most liked movie"
-            className={styles.movieImage}
-          />
-          <MovieInfo movie={movie} variant="card" />
-        </Link>
-      </div>
-    </>
+    <div className={styles.card}>
+      <Link
+        to={`/movie/${movie.id}`}
+        className={styles.cardButton}
+        onClick={handleClick}
+      >
+        <img src={movieImg} alt="movie" className={styles.movieImage} />
+        <MovieInfo movie={movie} variant="card" />
+      </Link>
+    </div>
   );
 };

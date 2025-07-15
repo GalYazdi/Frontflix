@@ -3,9 +3,19 @@
   align-items: center;
 }
 
+.categoriesWrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.movieCategory {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .topMovieName {
   font-size: clamp(15px, 3vw, 28px);
-
   margin-left: 8px;
   font-weight: 600;
 }
@@ -25,14 +35,12 @@
 .cardMovieRating {
   color: rgb(239, 239, 240);
   margin: 6px 0 0 8px;
-
   font-size: 12px;
 }
 
 .topDot {
-  color: rgba(82, 82, 91, 1);
+  color: rgb(82, 82, 91);
   font-size: clamp(7px, 2vw, 20px);
-
   display: inline-block;
 }
 

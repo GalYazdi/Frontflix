@@ -7,71 +7,70 @@ type Props = {
   variant?: "card" | "top";
 };
 
-export const MovieInfo = ({ movie, variant }: Props) => {
-  return (
-    <>
-      <div className={styles.container}
-
+export const MovieInfo = ({
+  movie: { title, rating, categories, year, director, likes },
+  variant,
+}: Props) => (
+  <>
+    <div className={styles.container}>
+      <span
+        className={
+          variant === "top" ? styles.topMovieName : styles.cardMovieName
+        }
       >
-        <span
-          className={
-            variant === "top" ? styles.topMovieName : styles.cardMovieName
-          }
-        >
-          {movie?.title}
-        </span>
-        <span
-          className={
-            variant === "top" ? styles.topMovieRating : styles.cardMovieRating
-          }
-        >
-          {movie?.rating}/10
-        </span>
-      </div>
-      <div>
-        <div
-          className={
-            variant === "top"
-              ? styles.topMovieCategory
-              : styles.cardMovieCategory
-          }
-        >
-          {movie?.categories.map((category, index) => (
-            <span key={`${category}-${index}`}>
+        {title}
+      </span>
+      <span
+        className={
+          variant === "top" ? styles.topMovieRating : styles.cardMovieRating
+        }
+      >
+        {rating}/10
+      </span>
+    </div>
+    <div>
+      <div
+        className={
+          variant === "top" ? styles.topMovieCategory : styles.cardMovieCategory
+        }
+      >
+        <div className={styles.categoriesWrapper}>
+          {categories.map((category, index) => (
+            <div className={styles.movieCategory} key={`${category}-${index}`}>
               {" "}
               {category}{" "}
-              {index < movie.categories.length - 1 && (
+              {index < categories.length - 1 && (
                 <span
                   className={variant === "top" ? styles.topDot : styles.cardDot}
                 >
                   •
                 </span>
               )}
-            </span>
+            </div>
           ))}
         </div>
-        <p
-          className={
-            variant === "top" ? styles.topMovieCreator : styles.cardMovieCreator
-          }
-        >
-          {movie?.year} By {movie?.director}
-        </p>
-        <div
-          className={
-            variant === "top" ? styles.topMovieLikes : styles.cardMovieLikes
-          }
-        >
-          <AiOutlineHeart color="red" />
-          <span
-            className={
-              variant === "top" ? styles.topNumOfLikes : styles.cardNumOfLikes
-            }
-          >
-            {movie?.likes}
-          </span>
-        </div>
       </div>
-    </>
-  );
-};
+      <p
+        className={
+          variant === "top" ? styles.topMovieCreator : styles.cardMovieCreator
+        }
+      >
+        {year} By {director}
+      </p>
+      <div
+        className={
+          variant === "top" ? styles.topMovieLikes : styles.cardMovieLikes
+        }
+      >
+        <AiOutlineHeart color="red" />
+        <span
+          className={
+            variant === "top" ? styles.topNumOfLikes : styles.cardNumOfLikes
+          }
+        >
+          {likes}
+        </span>
+      </div>
+    </div>
+  </>
+);

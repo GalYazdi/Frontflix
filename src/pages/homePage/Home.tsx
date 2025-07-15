@@ -1,20 +1,23 @@
 import { useState, useMemo } from "react";
-import { Navbar } from "../../components/Navbar";
-import { TopMovie } from "./TopMovie";
 import { useQuery } from "@tanstack/react-query";
 import type { Movie } from "debflix-types";
+
+import { Navbar } from "../../components/Navbar";
+import { TopMovie } from "./TopMovie";
 import { fetchMovies } from "../../api/fakeMovies";
 import { MoviesList } from "./MoviesList";
+import { QueryKeys } from "../../utils/queryKeys";
+import styles from "./Home.module.css"
 
 export const Home = () => {
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [searchQuery, setSearchQuery] = useState("");
 
   const {
     data: movies,
     isLoading,
     error,
   } = useQuery<Movie[]>({
-    queryKey: ["movies"],
+    queryKey: [QueryKeys.movies],
     queryFn: fetchMovies,
   });
 
@@ -40,14 +43,18 @@ export const Home = () => {
     return <div>{error?.message}</div>;
   }
 
-  return isLoading ? (
-    <div>טוען...</div>
-  ) : error ? (
-    <div>{error.message}</div>
-  ) : (
+  if (isLoading) {
+    return <div>loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error.message}</div>;
+  }
+
+  return (
     <>
       <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <div style={{ height: "1px" }} />
+      <div className={styles.space} />
 
       {topLikedMovie && <TopMovie movie={topLikedMovie} />}
       <MoviesList movies={filteredMovies} />
