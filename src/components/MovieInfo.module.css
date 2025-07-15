@@ -1,6 +1,9 @@
-.container {
-  display: flex;
-  align-items: center;
+.topNameAndRating {
+  margin-bottom: 1.1em;
+}
+
+.cardNameAndRating {
+  margin-bottom: 0.4em;
 }
 
 .categoriesWrapper {

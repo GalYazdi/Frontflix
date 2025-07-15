@@ -11,8 +11,10 @@ export const MovieInfo = ({
   movie: { title, rating, categories, year, director, likes },
   variant,
 }: Props) => (
-  <>
-    <div className={styles.container}>
+  <div>
+    <div
+      className={variant === "top" ? styles.topNameAndRating : styles.cardNameAndRating}
+    >
       <span
         className={
           variant === "top" ? styles.topMovieName : styles.cardMovieName
@@ -72,5 +74,5 @@ export const MovieInfo = ({
         </span>
       </div>
     </div>
-  </>
+  </div>
 );
