@@ -1,4 +1,4 @@
-import { AiOutlineHeart } from "react-icons/ai";
+import { Heart } from "lucide-react";
 import type { Movie } from "debflix-types";
 import styles from "./MovieInfo.module.css";
 
@@ -64,7 +64,7 @@ export const MovieInfo = ({
           variant === "top" ? styles.topMovieLikes : styles.cardMovieLikes
         }
       >
-        <AiOutlineHeart color="red" />
+        <Heart color="red" />
         <span
           className={
             variant === "top" ? styles.topNumOfLikes : styles.cardNumOfLikes

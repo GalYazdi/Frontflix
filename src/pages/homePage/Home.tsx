@@ -7,7 +7,6 @@ import { TopMovie } from "./TopMovie";
 import { fetchMovies } from "../../api/fakeMovies";
 import { MoviesList } from "./MoviesList";
 import { QueryKeys } from "../../utils/queryKeys";
-import styles from "./Home.module.css"
 
 export const Home = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -54,7 +53,6 @@ export const Home = () => {
   return (
     <>
       <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-      <div className={styles.space} />
 
       {topLikedMovie && <TopMovie movie={topLikedMovie} />}
       <MoviesList movies={filteredMovies} />

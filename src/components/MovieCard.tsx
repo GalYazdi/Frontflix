@@ -14,13 +14,15 @@ type Props = {
 };
 
 export const MovieCard = ({ movie }: Props) => {
+  const { id } = movie;
+
   const fetchMovie = async () => {
-    const response = await axios.get(`${API_BASE_URL}/posts/${movie.id}`);
+    const response = await axios.get(`${API_BASE_URL}/posts/${id}`);
     return response.data;
   };
 
   const { error, refetch } = useQuery({
-    queryKey: [QueryKeys.movieById, movie.id],
+    queryKey: [QueryKeys.movieById, id],
     queryFn: fetchMovie,
   });
   const handleClick = async () => {
@@ -35,7 +37,7 @@ export const MovieCard = ({ movie }: Props) => {
   return (
     <div className={styles.card}>
       <Link
-        to={`/movie/${movie.id}`}
+        to={`/movie/${id}`}
         className={styles.cardButton}
         onClick={handleClick}
       >

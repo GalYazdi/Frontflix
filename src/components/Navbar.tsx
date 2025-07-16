@@ -1,6 +1,6 @@
 import { Search, Users } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
@@ -11,7 +11,7 @@ import { QueryKeys } from "../utils/queryKeys";
 
 type Props = {
   searchQuery: string;
-  setSearchQuery: (val: string) => void;
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export const Navbar = ({ searchQuery, setSearchQuery }: Props) => {
@@ -24,8 +24,8 @@ export const Navbar = ({ searchQuery, setSearchQuery }: Props) => {
     queryFn: getNavbarData,
   });
   const [displaySearchField, setDisplaySearchField] = useState(false);
+  const [userProfileImage, setUserProfileImage] = useState(defaultProfile);
 
-  const userProfileImage = defaultProfile; // later will be replaced with a dynamic image
 
   if (isLoading) {
     return <div>loading...</div>;
