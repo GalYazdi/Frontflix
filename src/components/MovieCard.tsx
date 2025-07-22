@@ -24,6 +24,7 @@ export const MovieCard = ({ movie }: Props) => {
   const { error, refetch } = useQuery({
     queryKey: [QueryKeys.movieById, id],
     queryFn: fetchMovie,
+    enabled: false,
   });
   const handleClick = async () => {
     const result = await refetch();
