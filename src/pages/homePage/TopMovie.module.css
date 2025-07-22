@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  max-width: 2000px;
+  height: 50vh;
+  margin-left: 20px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.movieImage {
+  width: 100%;
+  height: 100%;
+  margin-top:80px;
+  object-fit: cover;
+  object-position: center 33%;
+  border-radius: 0 8px 8px 0;
+}
+
+.movieDetails {
+  top: 35%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  color: white;
+  font-family: "Arial";
+  gap: 20px;
+}
+
+.mostLiked {
+  font-size: clamp(20px, 4vw, 36px);
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .container {
+    margin-left: clamp(120px, 31vw, 180px);
+    margin-top: 20px;
+  }
+  .movieDetails {
+    top: 50%;
+  }
+}

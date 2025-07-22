@@ -1,0 +1,97 @@
+.topNameAndRating {
+  margin-bottom: 1.1em;
+}
+
+.cardNameAndRating {
+  margin-bottom: 0.4em;
+}
+
+.categoriesWrapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.movieCategory {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.topMovieName {
+  font-size: clamp(15px, 3vw, 28px);
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+.cardMovieName {
+  font-size: 14px;
+  margin-left: 12px;
+  font-weight: 600;
+}
+
+.topMovieRating {
+  color: rgb(239, 239, 240);
+  margin: 10px 0 0 10px;
+  font-size: clamp(7px, 2vw, 20px);
+}
+
+.cardMovieRating {
+  color: rgb(239, 239, 240);
+  margin: 6px 0 0 8px;
+  font-size: 12px;
+}
+
+.topDot {
+  color: rgb(82, 82, 91);
+  font-size: clamp(7px, 2vw, 20px);
+  display: inline-block;
+}
+
+.cardDot {
+  color: rgba(82, 82, 91, 1);
+  font-size: 20px;
+  display: inline-block;
+}
+
+.topMovieCategory,
+.topMovieCreator {
+  color: rgb(239, 239, 240);
+  margin-left: 8px;
+  font-size: clamp(7px, 2vw, 20px);
+}
+
+.cardMovieCategory,
+.cardMovieCreator {
+  color: rgb(239, 239, 240);
+  font-size: 12px;
+  margin-left: 12px;
+}
+
+.topMovieLikes {
+  margin-left: 8px;
+  font-size: clamp(14px, 3vw, 28px);
+  position: relative;
+}
+
+.cardMovieLikes {
+  margin-left: 12px;
+  font-size: 20px;
+  position: relative;
+}
+
+.topNumOfLikes {
+  position: absolute;
+  color: rgb(239, 239, 240);
+  margin-left: 4px;
+  padding-top: 2px;
+  font-size: clamp(12px, 2vw, 20px);
+}
+
+.cardNumOfLikes {
+  position: absolute;
+  color: rgb(239, 239, 240);
+  margin-left: 4px;
+  padding-top: 3px;
+  font-size: 14px;
+}
+

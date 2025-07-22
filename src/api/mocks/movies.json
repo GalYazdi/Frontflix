@@ -1,0 +1,182 @@
+[
+  {
+    "id": "1",
+    "title": "The Last Horizon",
+    "rating": 5.6,
+    "categories": ["Action", "Adventure", "Comedy"],
+    "year": 2022,
+    "director": "Jane Smith",
+    "likes": 244
+  },
+  {
+    "id": "2",
+    "title": "Crimson Moon",
+    "rating": 10.0,
+    "categories": ["Adventure", "Romance", "Action"],
+    "year": 2018,
+    "director": "Tom Johnson",
+    "likes": 873
+  },
+  {
+    "id": "3",
+    "title": "Fading Lights",
+    "rating": 9.2,
+    "categories": ["Sci-Fi", "Adventure", "Horror"],
+    "year": 2017,
+    "director": "Tom Johnson",
+    "likes": 120
+  },
+  {
+    "id": "4",
+    "title": "Silent Echoes",
+    "rating": 5.4,
+    "categories": ["Adventure", "Comedy", "Action"],
+    "year": 2006,
+    "director": "Jane Smith",
+    "likes": 169
+  },
+  {
+    "id": "5",
+    "title": "Shattered Dreams",
+    "rating": 6.8,
+    "categories": ["Drama", "Thriller", "Adventure"],
+    "year": 2009,
+    "director": "Emily Davis",
+    "likes": 555
+  },
+  {
+    "id": "6",
+    "title": "Laughing Shadows",
+    "rating": 7.7,
+    "categories": ["Comedy", "Horror", "Fantasy"],
+    "year": 2021,
+    "director": "Michael Brown",
+    "likes": 422
+  },
+  {
+    "id": "7",
+    "title": "Midnight Quest",
+    "rating": 8.4,
+    "categories": ["Sci-Fi", "Fantasy", "Romance"],
+    "year": 2001,
+    "director": "Tom Johnson",
+    "likes": 288
+  },
+  {
+    "id": "8",
+    "title": "Frozen Time",
+    "rating": 9.5,
+    "categories": ["Sci-Fi", "Fantasy", "Drama"],
+    "year": 2020,
+    "director": "Anna Lee",
+    "likes": 644
+  },
+  {
+    "id": "9",
+    "title": "Beyond the Stars",
+    "rating": 7.3,
+    "categories": ["Horror", "Romance", "Sci-Fi"],
+    "year": 2012,
+    "director": "Anna Lee",
+    "likes": 518
+  },
+  {
+    "id": "10",
+    "title": "Whispering Winds",
+    "rating": 8.9,
+    "categories": ["Romance", "Drama", "Adventure"],
+    "year": 2016,
+    "director": "David Wilson",
+    "likes": 731
+  },
+  {
+    "id": "11",
+    "title": "The Last Man",
+    "rating": 5.6,
+    "categories": ["Action", "Adventure", "Thriller"],
+    "year": 2022,
+    "director": "Jane Smith",
+    "likes": 244
+  },
+  {
+    "id": "12",
+    "title": "Crimson Night",
+    "rating": 10.0,
+    "categories": ["Adventure", "Romance", "Action"],
+    "year": 2018,
+    "director": "Tom Johnson",
+    "likes": 822
+  },
+  {
+    "id": "13",
+    "title": "Fading Lights",
+    "rating": 9.2,
+    "categories": ["Sci-Fi", "Adventure", "Horror"],
+    "year": 2017,
+    "director": "Tom Johnson",
+    "likes": 120
+  },
+  {
+    "id": "14",
+    "title": "Silent Echoes",
+    "rating": 5.4,
+    "categories": ["Adventure", "Comedy", "Thriller"],
+    "year": 2006,
+    "director": "Jane Smith",
+    "likes": 169
+  },
+  {
+    "id": "15",
+    "title": "Shattered Dreams",
+    "rating": 6.8,
+    "categories": ["Drama", "Thriller", "Adventure"],
+    "year": 2009,
+    "director": "Emily Davis",
+    "likes": 555
+  },
+  {
+    "id": "16",
+    "title": "Laughing Shadows",
+    "rating": 7.7,
+    "categories": ["Comedy", "Horror", "Fantasy"],
+    "year": 2021,
+    "director": "Michael Brown",
+    "likes": 422
+  },
+  {
+    "id": "17",
+    "title": "Midnight Quest",
+    "rating": 8.4,
+    "categories": ["Sci-Fi", "Fantasy", "Romance"],
+    "year": 2001,
+    "director": "Tom Johnson",
+    "likes": 288
+  },
+  {
+    "id": "18",
+    "title": "Frozen Time",
+    "rating": 9.5,
+    "categories": ["Sci-Fi", "Fantasy", "Drama"],
+    "year": 2020,
+    "director": "Anna Lee",
+    "likes": 644
+  },
+  {
+    "id": "19",
+    "title": "Beyond the Stars",
+    "rating": 7.3,
+    "categories": ["Romance", "Thriller", "Sci-Fi"],
+    "year": 2012,
+    "director": "Anna Lee",
+    "likes": 518
+  },
+  {
+    "id": "20",
+    "title": "Whispering Winds",
+    "rating": 8.9,
+    "categories": ["Romance", "Drama", "Adventure"],
+    "year": 2016,
+    "director": "David Wilson",
+    "likes": 731
+  }
+]

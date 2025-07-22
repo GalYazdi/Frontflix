@@ -1,0 +1,38 @@
+.gridContainer {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+  width: 99%;
+}
+
+.category {
+  margin: 30px 0 35px 20px;
+  color: white;
+  font-family: "Arial";
+  font-weight: 700;
+  font-size: 19px;
+}
+
+.gridContainer > div {
+  flex: 0 0 calc((100% - 4em) / 5);
+}
+
+@media (max-width: 768px) {
+  .gridContainer > div {
+    flex: 0 0 calc((100% - 2em) / 3);
+  }
+}
+
+@media (max-width: 648px) {
+  .gridContainer > div {
+    flex: 0 0 calc((100%) / 1);
+  }
+
+  .category {
+    margin-left: clamp(120px, 32vw, 180px);
+    color: white;
+    font-family: "Arial";
+    font-weight: 700;
+    font-size: 19px;
+  }
+}
