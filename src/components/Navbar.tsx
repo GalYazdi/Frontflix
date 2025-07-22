@@ -79,11 +79,11 @@ export const Navbar = ({ searchQuery, setSearchQuery }: Props) => {
           )}
         </div>
 
-        <button className={styles.actorsBtn}>
+        <Link to={"/actors"} className={styles.actorsBtn}>
           <span className={styles.actorsIcon}>
             <Users color="white" />
           </span>
-        </button>
+        </Link>
         <button className={styles.profileBtn}>
           <img
             src={userProfileImage}
