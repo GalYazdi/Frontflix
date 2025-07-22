@@ -1,0 +1,28 @@
+.container {
+  top: 100px;
+  position: absolute;
+  right: 30px;
+}
+
+.addActorBtn {
+  display: flex;
+  align-items: center;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: bold;
+  gap: 4px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addActorBtn:hover {
+  background-color: #dc2626; 
+  text-shadow: 2px 2px 8px rgb(213, 76, 76);
+
+}
+
+

@@ -1,0 +1,21 @@
+.container {
+  margin: 165px 0 0 15px;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  padding-right: 100px;
+}
+
+.title{
+    color: white;
+    font-family: "Arial";
+}
+
+@media (max-width: 768px) {
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
