@@ -17,7 +17,7 @@ export const ActorCard = ({ actor }: Props) => {
   return (
     <div className={styles.card}>
       <img src={actorImage} alt="actor" className={styles.actorImage} />
-      <span className={styles.actorName}>{actor.name}</span>
+      <span className={styles.actorName}>{actor.firstName} {actor.lastName}</span>
 
       <div className={styles.genderWrapper}>
         <Transgender className={styles.icon} />

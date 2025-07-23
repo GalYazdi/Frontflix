@@ -17,7 +17,7 @@ import axios from "axios";
 type formFields = {
   firstName: string;
   lastName: string;
-  // gender: "male" | "female";
+  gender: "male" | "female";
   // birthDate: Date;
   actorMovie: Movie[];
   name: string;
@@ -51,11 +51,9 @@ export const ActorForm = ({ movies }: Props) => {
     const parsedBirthDay = birthDate.getTime();
 
     try {
-      const fullName = `${data.firstName} ${data.lastName}`;
-
       const finalData = {
-        name: fullName,
-        birthDate: parsedBirthDay,
+        ...data,
+        birthDate : parsedBirthDay,
         movies: actorMovies,
       };
 
@@ -121,7 +119,7 @@ export const ActorForm = ({ movies }: Props) => {
               className={styles.dataInput}
             />
           </fieldset>
-          {/* <fieldset>
+          <fieldset>
             <legend>Gender</legend>
             <select
               {...register("gender")}
@@ -136,7 +134,7 @@ export const ActorForm = ({ movies }: Props) => {
               <option value="male">Male</option>
               <option value="female">Female</option>
             </select>
-          </fieldset> */}
+          </fieldset>
           <fieldset>
             <legend>Birth Date</legend>
             <div className={styles.dateContainer}>

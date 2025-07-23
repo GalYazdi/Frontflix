@@ -1,11 +1,7 @@
 import axios from "axios";
-import type { Actor, Movie } from "debflix-types";
+import type { Actor } from "debflix-types";
 
-type NewActor = {
-  name: string;
-  birthDate: number;
-  movies: Movie[];
-};
+type NewActor = Omit<Actor, "id" | "birthDate">
 
 export const fetchActors = async (): Promise<Actor[]> => {
   const res = await axios.get<Actor[]>("http://localhost:3000/actors/getAll");
@@ -16,7 +12,7 @@ export const addActor = async (actor: NewActor): Promise<Actor> => {
   const res = await axios.post<Actor>(
     "http://localhost:3000/actors/add",
     actor,
-    { headers: { "Content-Type": "application/json" } }
+    // { headers: { "Content-Type": "application/json" } }
   );
   return res.data;
 };
