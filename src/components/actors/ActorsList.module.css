@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
-  padding-right: 100px;
+  padding-right: 20px;
 }
 
 .title{

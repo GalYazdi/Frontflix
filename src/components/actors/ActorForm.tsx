@@ -18,9 +18,7 @@ type formFields = {
   firstName: string;
   lastName: string;
   gender: "male" | "female";
-  // birthDate: Date;
   actorMovie: Movie[];
-  name: string;
 };
 
 type Props = {
@@ -45,15 +43,15 @@ export const ActorForm = ({ movies }: Props) => {
 
   const onSubmit: SubmitHandler<formFields> = async (data) => {
     if (!birthDate) {
-      alert("Please select a birth date");
       return;
     }
+
     const parsedBirthDay = birthDate.getTime();
 
     try {
       const finalData = {
         ...data,
-        birthDate : parsedBirthDay,
+        birthDate: parsedBirthDay,
         movies: actorMovies,
       };
 
@@ -67,8 +65,6 @@ export const ActorForm = ({ movies }: Props) => {
     }
   };
 
-  console.log("Movies data:", movies);
-
   const handleAddMovie = () => {
     const movieName = movieInputRef.current?.value?.trim().toLowerCase();
 
@@ -80,6 +76,10 @@ export const ActorForm = ({ movies }: Props) => {
       ...prevMovies,
       movies.find((movie) => movie.title.toLowerCase() === movieName)!,
     ]);
+  };
+
+  const handleDeleteMovie = (id: string) => {
+    setActorMovies((prev) => prev.filter((movie) => movie.id !== id));
   };
 
   useEffect(() => {
@@ -171,6 +171,18 @@ export const ActorForm = ({ movies }: Props) => {
               />
             </div>
           </fieldset>
+          {actorMovies.length > 0 && (
+            <div className={styles.selectedMoviesContainer}>
+              {actorMovies.map((movie) => (
+                <div className={styles.selectedMovie} key={movie.id}>
+                  <span className={styles.title}>{movie.title}</span>{" "}
+                  <div className={styles.deleteMovie}>
+                    <X onClick={() => handleDeleteMovie(movie.id)} size={13} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
           <div className={styles.buttonsContanier}>
             <button
               onClick={() => dispatch(closeModal())}
