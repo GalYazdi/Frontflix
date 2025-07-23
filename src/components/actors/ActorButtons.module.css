@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.addActorBtn {
+  display: flex;
+  align-items: center;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: bold;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 20px;
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-weight: bold;
+  gap: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 20px;
+}
+
+.addActorBtn:hover,
+.backBtn:hover {
+  background-color: #dc2626;
+  text-shadow: 2px 2px 8px rgb(213, 76, 76);
+}
+
+@media (max-width: 640px) {
+
+  .backBtn {
+    margin-left: clamp(100px, 30vw, 300px);
+  }
+}

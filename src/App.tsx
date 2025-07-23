@@ -1,6 +1,6 @@
 import "./App.css";
-import { Home } from "./pages/homePage/Home";
+import { ActorsPage } from "./pages/actorsPage/ActorsPage";
 
-const App = () => <Home />;
+const App = () => <ActorsPage />;
 
 export default App;

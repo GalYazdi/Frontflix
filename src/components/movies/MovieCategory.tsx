@@ -1,5 +1,5 @@
 import type { Movie } from "debflix-types";
-import { MovieCard } from "../../components/MovieCard";
+import { MovieCard } from "./MovieCard";
 import styles from "./MovieCategory.module.css";
 
 type Props = {

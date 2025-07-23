@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 import type { Movie } from "debflix-types";
 import axios from "axios";
 
-import movieImg from "../assets/spiderman.jpg";
+import movieImg from "../../assets/spiderman.jpg";
 import styles from "./MovieCard.module.css";
 import { MovieInfo } from "./MovieInfo";
-import { API_BASE_URL } from "../utils/config";
+import { API_BASE_URL } from "../../utils/config";
 import { useQuery } from "@tanstack/react-query";
-import { QueryKeys } from "../utils/queryKeys";
+import { QueryKeys } from "../../utils/queryKeys";
 
 type Props = {
   movie: Movie;

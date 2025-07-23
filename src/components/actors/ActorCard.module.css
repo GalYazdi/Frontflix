@@ -1,0 +1,82 @@
+.card {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background: rgb(24, 24, 27);
+  border-radius: 8px 8px 8px 8px;
+  font-family: "Arial";
+  color: white;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.actorImage {
+  height: 150px;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 12px;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+.actorName {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.genderWrapper {
+  display: flex;
+  position: relative;
+  margin-left: 10px;
+}
+
+.icon {
+  height: 15px;
+  width: 15px;
+}
+
+.gender {
+  font-size: 14px;
+  position: absolute;
+  left: 20px;
+}
+
+.ageWrapper {
+  display: flex;
+  margin-left: 10px;
+  gap: 5px;
+}
+
+.age {
+  font-size: 14px;
+}
+
+.moviesContainer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  gap: 8px;
+}
+.moviesSection {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.moviesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.movie {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  color: rgba(82, 82, 91, 1);
+  font-size: 20px;
+}
