@@ -1,7 +1,7 @@
 import type { Movie } from "debflix-types";
 import categories from "../../api/mocks/categories.json";
-import { MovieCategory } from "./MovieCategory";
-import styles from "./MovieList.module.css"
+import { MovieCategory } from "../../components/movies/MovieCategory";
+import styles from "./MovieList.module.css";
 
 type Props = {
   movies: Movie[];

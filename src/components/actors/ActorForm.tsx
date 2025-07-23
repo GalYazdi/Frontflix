@@ -1,18 +1,18 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import { Calendar, Plus, X } from "lucide-react";
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
+import type { Movie } from "debflix-types";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
 
 import "react-datepicker/dist/react-datepicker.css";
 import styles from "./ActorForm.module.css";
 import { Modal } from "../modal/Modal";
 import { useAppDispatch } from "../../app/hooks";
 import { closeModal } from "../modal/modalSlice";
-import type { Movie } from "debflix-types";
-import { useMutation } from "@tanstack/react-query";
 import { addActor } from "../../api/actors";
-import axios from "axios";
 
 type formFields = {
   firstName: string;
@@ -55,14 +55,13 @@ export const ActorForm = ({ movies }: Props) => {
         movies: actorMovies,
       };
 
-      console.log("dataaa", finalData);
-
       await addActorMutation(finalData);
     } catch (e) {
       if (axios.isAxiosError(e)) {
         console.log("error:", e.message);
       }
     }
+    dispatch(closeModal());
   };
 
   const handleAddMovie = () => {
@@ -72,6 +71,11 @@ export const ActorForm = ({ movies }: Props) => {
       alert("Movie doesnt exist in the database");
       return;
     }
+
+    if (actorMovies.some((movie) => movie.title.toLowerCase() === movieName)) {
+      return;
+    }
+
     setActorMovies((prevMovies) => [
       ...prevMovies,
       movies.find((movie) => movie.title.toLowerCase() === movieName)!,
@@ -81,10 +85,6 @@ export const ActorForm = ({ movies }: Props) => {
   const handleDeleteMovie = (id: string) => {
     setActorMovies((prev) => prev.filter((movie) => movie.id !== id));
   };
-
-  useEffect(() => {
-    console.log("Updated actorMovies:", actorMovies);
-  }, [actorMovies]);
 
   return (
     <Modal>

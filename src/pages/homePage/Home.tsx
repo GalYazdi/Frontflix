@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import type { Movie } from "debflix-types";
 
 import { Navbar } from "../../components/Navbar";
-import { TopMovie } from "./TopMovie";
+import { TopMovie } from "../../components/movies/TopMovie";
 import { fetchMovies } from "../../api/fakeMovies";
 import { MoviesList } from "./MoviesList";
 import { QueryKeys } from "../../utils/queryKeys";

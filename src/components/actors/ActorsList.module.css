@@ -1,5 +1,5 @@
 .container {
-  margin: 165px 0 0 15px;
+  margin: 0 0 0 15px;
 }
 
 .gridContainer {
@@ -9,13 +9,22 @@
   padding-right: 20px;
 }
 
-.title{
-    color: white;
-    font-family: "Arial";
+.title {
+  color: white;
+  font-family: "Arial";
 }
 
 @media (max-width: 768px) {
   .gridContainer {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .gridContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-left: clamp(30px, 30vw, 180px);
   }
 }

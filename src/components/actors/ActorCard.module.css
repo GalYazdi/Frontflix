@@ -63,9 +63,9 @@
 }
 
 .moviesWrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .movie {
@@ -74,4 +74,9 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+.dot {
+  color: rgba(82, 82, 91, 1);
+  font-size: 20px;
 }

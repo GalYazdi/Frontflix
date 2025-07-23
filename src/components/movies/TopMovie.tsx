@@ -2,7 +2,7 @@ import type { Movie } from "debflix-types";
 
 import topMovie from "../../assets/spiderman.jpg";
 import styles from "./TopMovie.module.css";
-import { MovieInfo } from "../../components/MovieInfo";
+import { MovieInfo } from "./MovieInfo";
 
 type Props = {
   movie: Movie;
